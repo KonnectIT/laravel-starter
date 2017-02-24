@@ -1,40 +1,89 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Larevel starter project
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## What is installed by default in this project
 
-## About Laravel
+- [Laravel Dusk](#laravel-dusk)
+- [Laravel Debugbar](#laravel-debugbar)
+- [Laravel IDE Helper](#laravel-ide-helper)
+- [Laravel Env Sync](#laravel-env-sync)
+- [Laravel Lang](#laravel-lang)
+- [Laravel Backup](#laravel-backup)
+- .
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+<a name="laravel-dusk"></a>
+### Laravel Dusk
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel Dusk provides an expressive, easy-to-use browser automation and testing API. Docs can be found [here](https://laravel.com/docs/master/dusk).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+Usage:
 
-## Learning Laravel
+```bash
+php artisan dusk
+```
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+<a name="laravel-debugger"></a>
+### Laravel Debugbar
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+This is a package to integrate PHP Debug Bar with Laravel 5. It includes a ServiceProvider to register the debugbar and attach it to the output.
 
-## Contributing
+[Docs here](https://github.com/barryvdh/laravel-debugbar)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+<a name="laravel-ide-helper"></a>
+### Laravel IDE Helper
 
-## Security Vulnerabilities
+This package generates a file that your IDE understands, so it can provide accurate autocompletion. Generation is done based on the files in your project, so they are always up-to-date.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+[Docs here](https://github.com/barryvdh/laravel-ide-helper)
 
-## License
+<a name="laravel-env-sync"></a>
+### Laravel Env Sync
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Keep your `.env` in sync with your `.env.example` or vice versa.
+
+It reads the `.env.example` file and makes suggestions to fill your `.env` accordingly.
+
+```bash
+# check you .env file with
+php artisan env:check
+
+# sync you file with the .env.example
+php artisan env:sync
+```
+
+[Docs here](https://github.com/JulienTant/Laravel-Env-Sync)
+
+<a name="laravel-lang"></a>
+### Laravel Lang
+
+52 languages support for Laravel 5 application based on caouecs/Laravel-lang.
+
+```bash
+# publish you language files like this:
+php artisan lang:publish nl
+```
+
+[Docs here](https://github.com/overtrue/laravel-lang)
+
+<a name="laravel-backup"></a>
+### Laravel Backup
+
+This Laravel package creates a backup of your application. The backup is a zipfile that contains all files in the directories you specify along with a dump of your database. The backup can be stored on any of the filesystems you have configured in Laravel 5.
+
+Feeling paranoid about backups? Don't be! You can backup your application to multiple filesystems at once.
+
+Once installed, making a backup of your files and databases is very easy. Just run this artisan command:
+
+	php artisan backup:run
+
+In addition to making the backup, the package can also clean up old backups, monitor the health of the backups, and show an overview of all backups.
+
+Also installed `guzzlehttp/guzzle` to send notifications to Slack. Also configure you webhook for Slack in you `.env`.
+
+Default schedules added:
+
+| Command | When |
+| :--- | :--- |
+| backup:clean | daily at 01:00 |
+| backup:run | daiyli at 02:00 |
+
+[Docs here](https://docs.spatie.be/laravel-backup/v4/introduction)
