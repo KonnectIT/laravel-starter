@@ -1,44 +1,44 @@
-@servers(['web' => 'user@192.168.1.1', 'localhost' => '127.0.0.1'])
-
 @setup
-    function env(string $key) {
-        $dotenv = file_get_contents('.env');
-        $rows   = explode("\n", $dotenv);
+require __DIR__.'/vendor/autoload.php';
+(new \Dotenv\Dotenv(__DIR__, '.env'))->load();
 
-        $search = array_filter($rows, function ($row) use ($key) {
-            if (strstr($row, $key)) {
-                return $row;
-            }
-        });
+// server-naam zelfde naam geven als (git/bitbucket) repo-naam
 
-        $variable = reset($search);
-        $segments = explode('=', $variable);
-        $user = end($segments);
+$server = "testrepo";
+$repository = "spatie/{$server}";
+$baseDir = "/home/forge/{$server}";
+$releasesDir = "{$baseDir}/releases";
+$currentDir = "{$baseDir}/current";
+$newReleaseName = date('Ymd-His');
+$newReleaseDir = "{$releasesDir}/{$newReleaseName}";
+$user = get_current_user();
 
-        return $user;
-    }
+function logMessage($message) {
+return "echo '\033[32m" .$message. "\033[0m';\n";
+}
 
-    # Set Slack webhook URL
-    $slackWebhookUrl = env('SLACK_WEBHOOK_URL');
 @endsetup
 
+@servers(['web' => 'user@192.168.1.1', 'localhost' => '127.0.0.1'])
+
 @finished
-    # @slack($slackWebhookUrl, '@e.heij')
+    @slack(env('SLACK_WEBHOOK_URL'), '#deployments', "{$server}: {$baseDir} release {$newReleaseName} by {$user}: {$task} done")
 @endfinished
 
 @story('deploy', ['on' => ['localhost']])
     git
-    composer
+    runComposer
 @endstory
 
 @task('git')
-    echo git
+    {{ logMessage('git'); }}
     # git pull origin master
 @endtask
 
-@task('composer')
-    echo composer
-    # composer install
+@task('runComposer', ['on' => 'localhost'])
+{{ logMessage("\u{1F69A}  Running Composer...") }}
+# cd {{ $newReleaseDir }};
+# composer install --prefer-dist --no-scripts --no-dev -q -o;
 @endtask
 
 @task('foo', ['on' => 'localhost'])

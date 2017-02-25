@@ -1,0 +1,15 @@
+{
+    "Login": "Inloggen",
+    "Register": "Registreren",
+    "Logout": "Uitloggen",
+
+    "Forgot your password?": "Wachtwoord vergeten?",
+
+    "E-Mail Address": "Emailadres",
+    "Password": "Wachtwoord",
+    "Confirm Password": "Bevestig wachtwoord",
+    "Name": "Naam",
+    "Reset Password": "Wachtwoord opnieuw instellen",
+    "Send Password Reset Link": "Verstuur wachtwoord herstel link"
+
+}
