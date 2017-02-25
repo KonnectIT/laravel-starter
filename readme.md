@@ -12,11 +12,17 @@
 - [Laravel Menu](#laravel-menu)
 - [Laravel Permissions](#laravel-permissions)
 - [Redis](#redis)
+- [Beanstalk](#beanstalk)
 
 ## What to do by yourself
 
-- `php artisan app:name`
-- .
+- `php artisan app:name <name>`
+- `npm install` or `yarn`
+- `php artisan migrate --seed`
+
+## Todo
+
+- API / Presenters / Rest / JSON / auth / token
 
 <a name="laravel-dusk"></a>
 ### Laravel Dusk
@@ -190,6 +196,7 @@ $user->can('edit articles');
 
 [Docs here](https://laravel.com/docs/5.4/redis)
 
+<a name="beanstalk"></a>
 ### Beanstalk
 
 [Docs here](https://laravel.com/docs/5.4/queues)
