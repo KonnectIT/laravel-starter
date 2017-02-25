@@ -172,6 +172,10 @@ return [
         Jtant\LaravelEnvSync\EnvSyncServiceProvider::class,
         Overtrue\LaravelLang\TranslationServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
+        Lavary\Menu\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +236,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Date' => Jenssegers\Date\Date::class,
+        'Menu' => Lavary\Menu\Facade::class,
 
     ],
 

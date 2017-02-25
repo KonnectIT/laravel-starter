@@ -4,10 +4,27 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, LogsActivity, HasRoles;
+
+    protected static $logAttributes;
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            static::$logAttributes = array_keys($model->getDirty());
+        });
+
+        static::deleting(function ($model) {
+            static::$logAttributes = array_keys($model->toArray());
+        });
+    }
 
     /**
      * The attributes that are mass assignable.

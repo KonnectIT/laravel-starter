@@ -5,6 +5,7 @@ namespace App\Providers;
 use Debugbar;
 use Faker\Generator as FakerGenerator;
 use Faker\Factory as FakerFactory;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Dusk\DuskServiceProvider;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
@@ -18,7 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // https://laravel-news.com/laravel-5-4-key-too-long-error
+        Schema::defaultStringLength(191);
     }
 
     /**
@@ -35,11 +37,6 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->environment() !== 'production') {
             $this->app->register(DuskServiceProvider::class);
             $this->app->register(IdeHelperServiceProvider::class);
-        }
-        if (config('app.debug')) {
-            Debugbar::enable();
-        } else {
-            Debugbar::disable();
         }
     }
 }

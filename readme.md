@@ -8,6 +8,14 @@
 - [Laravel Env Sync](#laravel-env-sync)
 - [Laravel Lang](#laravel-lang)
 - [Laravel Backup](#laravel-backup)
+- [Jens Segers Date](#jenssegers-date)
+- [Laravel Menu](#laravel-menu)
+- [Laravel Permissions](#laravel-permissions)
+- [Redis](#redis)
+
+## What to do by yourself
+
+- `php artisan app:name`
 - .
 
 <a name="laravel-dusk"></a>
@@ -87,3 +95,106 @@ Default schedules added:
 | backup:run | daiyli at 02:00 |
 
 [Docs here](https://docs.spatie.be/laravel-backup/v4/introduction)
+
+<a name="jenssegeres-date"></a>
+### Jenssegers Data
+
+This date library extends `Carbon` with multi-language support. Methods such as `format`, `diffForHumans`, `parse`, `createFromFormat` and the new `timespan`, will now be translated based on your locale.
+
+[Docs here](https://github.com/jenssegers/date)
+
+<a name="laravel-activity"></a>
+### Laravel Activity
+
+Log the activities of your users
+
+```php
+activity()->log('Look mum, I logged something');
+
+$lastActivity = Activity::all()->last(); //returns the last logged activity
+$lastActivity->description; //returns 'Look mum, I logged something';
+
+activity()
+   ->causedBy($userModel)
+   ->performedOn($someContentModel)
+   ->withProperties(['key' => 'value'])
+   ->log('edited');
+   
+$lastActivity = Activity::all()->last(); //returns the last logged activity
+   
+$lastActivity->getExtraProperty('key') //returns 'value';  
+
+```
+
+[Docs here](https://docs.spatie.be/laravel-activitylog/v1/installation-and-setup)
+
+<a name="laravel-menu"></a>
+### Laravel Menu
+
+```php
+Menu::make('MyNavBar', function($menu){
+
+  $menu->add('Home');
+  $menu->add('About',    'about');
+  $menu->add('services', 'services');
+  $menu->add('Contact',  'contact');
+
+});
+
+{!! $MyNavBar->asUl() !!}
+
+# or
+
+{!! Menu::get('MyNavBar')->asUl() !!}
+```
+
+This will render like so:
+
+```html
+<ul>
+  <li><a href="http://yourdomain.com">Home</a></li>
+  <li><a href="http://yourdomain.com/about">About</a></li>
+  <li><a href="http://yourdomain.com/services">Services</a></li>
+  <li><a href="http://yourdomain.com/contact">Contact</a></li>
+</ul>
+```
+
+[Docs here](https://github.com/lavary/laravel-menu)
+
+<a name="laravel-permissions"></a>
+### Laravel Permissions
+
+Once installed you can do stuff like this:
+
+```php
+// adding permissions to a user
+$user->givePermissionTo('edit articles');
+
+// adding permissions via a role
+$user->assignRole('writer');
+$user2->assignRole('writer');
+
+$role->givePermissionTo('edit articles');
+```
+
+You can test if a user has a permission with Laravel's default can-function.
+
+```php
+$user->can('edit articles');
+```
+
+[Docs here](https://github.com/spatie/laravel-permission)
+
+<a name="redis"></a>
+### Redis (predis)
+
+[Docs here](https://laravel.com/docs/5.4/redis)
+
+### Beanstalk
+
+[Docs here](https://laravel.com/docs/5.4/queues)
+
+### Laravel Activity Log
+
+[Docs here](https://laravel.com/docs/5.4/redis)
+

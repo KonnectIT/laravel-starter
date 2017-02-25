@@ -24,6 +24,16 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        // Clean-up things
+        $schedule->command('cache:clear')->daily()->at('00:00');
+        $schedule->command('config:cache')->daily()->at('00:00');
+        $schedule->command('route:cache')->daily()->at('00:00');
+        $schedule->command('activitylog:clean')->daily()->at('00:00');
+        $schedule->command('debugbar:clear')->daily()->at('00:00');
+        $schedule->command('auth:clear-resets')->daily()->at('00:00');
+        $schedule->command('env:sync')->daily()->at('00:00');
+
+        // Running backup
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->daily()->at('02:00');
     }
