@@ -2,14 +2,16 @@
     "Login": "Inloggen",
     "Register": "Registreren",
     "Logout": "Uitloggen",
+    "Remember Me": "Mij onthouden",
 
     "Forgot your password?": "Wachtwoord vergeten?",
 
-    "E-Mail Address": "Emailadres",
+    "E-Mail Address": "Email",
     "Password": "Wachtwoord",
     "Confirm Password": "Bevestig wachtwoord",
     "Name": "Naam",
     "Reset Password": "Wachtwoord opnieuw instellen",
-    "Send Password Reset Link": "Verstuur wachtwoord herstel link"
+    "Send Password Reset Link": "Verstuur wachtwoord herstel link",
+    "Dashboard": "Dashboard"
 
 }
