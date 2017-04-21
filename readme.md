@@ -200,8 +200,3 @@ $user->can('edit articles');
 ### Beanstalk
 
 [Docs here](https://laravel.com/docs/5.4/queues)
-
-### Laravel Activity Log
-
-[Docs here](https://laravel.com/docs/5.4/redis)
-
