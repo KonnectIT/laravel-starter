@@ -178,6 +178,7 @@ return [
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Application Service Providers...
