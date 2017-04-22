@@ -1,5 +1,7 @@
 # Larevel starter project
 
+[Installation instructions](#installation)
+
 ## What is installed by default in this project
 
 - [Laravel Dusk](#laravel-dusk)
@@ -14,8 +16,12 @@
 - [Redis](#redis)
 - [Beanstalk](#beanstalk)
 
-## What to do by yourself
+<a name="installation"></a>
+## Installation
 
+- `git clone https://github.com/KonnectIT/laravel-starter my-project` and `cd` into it.
+- Copy `.env.example` to `.env`
+- `php artisan key:generate`
 - `php artisan app:name <name>`
 - `npm install` or `yarn`
 - `php artisan migrate --seed`
