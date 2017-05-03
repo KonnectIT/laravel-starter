@@ -23,7 +23,7 @@
 - Copy `.env.example` to `.env`
 - Check all settings within this new file (`.env`)
 - `php artisan key:generate`
-- `php artisan app:name <name>`
+- `php artisan passport:keys` (otherwise you're gettings failures with `php artisan route:list`)
 - `php artisan migrate --seed` (make sure your database settings are filled within the `.env` file)
 - `npm install` or `yarn`
 
