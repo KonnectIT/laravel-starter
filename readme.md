@@ -28,9 +28,21 @@
 - `php artisan migrate --seed` (make sure your database settings are filled within the `.env` file)
 - `npm install` or `yarn`
 
+## Default settings
+
+Users created:
+
+email | password
+--- | ---
+admin@example.com | admin
+moderator@example.com | moderator
+
+
 ## Todo
 
 - API / Presenters / Rest / JSON / auth / token
+
+## Installed (and configured) packages
 
 <a name="laravel-dusk"></a>
 ### Laravel Dusk
