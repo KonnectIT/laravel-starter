@@ -21,8 +21,9 @@
 
 - `git clone https://github.com/KonnectIT/laravel-starter my-project` and `cd` into it.
 - Copy `.env.example` to `.env`
-- Check all settings within this new file (`.env`)
+- `composer install` to install the packages
 - `php artisan key:generate`
+- Check all settings within this new file (`.env`)
 - `php artisan passport:keys` (otherwise you're gettings failures with `php artisan route:list`)
 - `php artisan migrate --seed` (make sure your database settings are filled within the `.env` file)
 - `npm install` or `yarn`

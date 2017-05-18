@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Debugbar;
 use Faker\Generator as FakerGenerator;
 use Faker\Factory as FakerFactory;
 use Illuminate\Support\Facades\Schema;
