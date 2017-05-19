@@ -1,4 +1,4 @@
-# Larevel starter project
+# Laravel starter project
 
 [Installation instructions](#installation)
 
@@ -37,7 +37,11 @@ email | password
 admin@example.com | admin
 moderator@example.com | moderator
 
+## Nice to know
 
+- Comment-out the last couple of lines in `resources/assets/js/[front/back]/bootstrap.js` about **laravel-echo**
+ when you don't have a Laravel Echo / SocketIO server available, to prevent javascript errors.
+ 
 ## Todo
 
 - API / Presenters / Rest / JSON / auth / token
