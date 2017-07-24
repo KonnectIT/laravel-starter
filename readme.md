@@ -15,6 +15,7 @@
 - [Laravel Permissions](#laravel-permissions)
 - [Redis](#redis)
 - [Beanstalk](#beanstalk)
+- [Laravel Echo Server](#laravel-echo-server)
 
 <a name="installation"></a>
 ## Installation
@@ -224,3 +225,15 @@ $user->can('edit articles');
 ### Beanstalk
 
 [Docs here](https://laravel.com/docs/5.4/queues)
+
+<a name="laravel-echo-server"></a>
+## Laravel Echo Server
+
+Config-file is located in the root of the project (```./laravel-echo-server.json```).
+
+To start the server, run
+
+```bash
+laravel-echo-server start
+```
+[Docs here](https://github.com/tlaverdure/laravel-echo-server)

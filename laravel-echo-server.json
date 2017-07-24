@@ -1,18 +1,26 @@
 {
-	"authHost": "https://laravel54-start-project-here",
+	"authHost": "http://rrsvp-print-laravel",
 	"authEndpoint": "/broadcasting/auth",
-	"clients": [],
+	"clients": [
+		{
+			"appId": "ac4fe8519f4cd802",
+			"key": "92ac61bfbd539f88104d642b4044e396"
+		}
+	],
 	"database": "redis",
 	"databaseConfig": {
-		"redis": {},
+		"redis": {
+			"port": "6379",
+			"host": "localhost"
+		},
 		"sqlite": {
 			"databasePath": "/database/laravel-echo-server.sqlite"
 		}
 	},
-	"devMode": false,
+	"devMode": true,
 	"host": null,
 	"port": "6001",
-	"protocol": "https",
+	"protocol": "http",
 	"socketio": {},
 	"sslCertPath": "",
 	"sslKeyPath": ""
