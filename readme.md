@@ -43,10 +43,6 @@ moderator@example.com | moderator
 - Comment-out the last couple of lines in `resources/assets/js/[front/back]/bootstrap.js` about **laravel-echo**
  when you don't have a Laravel Echo / SocketIO server available, to prevent javascript errors.
  
-## Todo
-
-- API / Presenters / Rest / JSON / auth / token
-
 ## Installed (and configured) packages
 
 <a name="laravel-dusk"></a>
@@ -227,7 +223,7 @@ $user->can('edit articles');
 [Docs here](https://laravel.com/docs/5.4/queues)
 
 <a name="laravel-echo-server"></a>
-## Laravel Echo Server
+### Laravel Echo Server
 
 Config-file is located in the root of the project (```./laravel-echo-server.json```).
 
@@ -237,3 +233,7 @@ To start the server, run
 laravel-echo-server start
 ```
 [Docs here](https://github.com/tlaverdure/laravel-echo-server)
+
+## Todo
+
+- API / Presenters / Rest / JSON / auth / token
