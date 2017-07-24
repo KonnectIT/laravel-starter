@@ -83,5 +83,9 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/front.app.js') }}"></script>
+
+    <!-- Only when using laravel-echo-server -->
+    <script src="//{{ Request::getHost() . ':6001/socket.io/socket.io.js' }}"></script>
+
 </body>
 </html>
