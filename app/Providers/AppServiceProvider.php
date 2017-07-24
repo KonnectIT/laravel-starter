@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Faker\Generator as FakerGenerator;
 use Faker\Factory as FakerFactory;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Dusk\DuskServiceProvider;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
@@ -18,8 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // https://laravel-news.com/laravel-5-4-key-too-long-error
-        Schema::defaultStringLength(191);
+        //
     }
 
     /**
